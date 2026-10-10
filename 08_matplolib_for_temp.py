@@ -45,5 +45,5 @@ plt.show()
 
 if not os.path.exists("data"):
     os.makedirs("data")
-df.to_csv("data/hyderabad_next_7_days_temperature")
+df.to_csv("data/hyderabad_next_seven_days_temperature")
 print("Saved Successfully")

@@ -1,16 +1,17 @@
 # import
-import requests
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import requests
 
 url = "https://api.open-meteo.com/v1/forecast"
 
 params = {
-    "latitude" : 25.3969,
-    "longitude" : 68.3772,
-    "daily" : "temperature_2m_max,temperature_2m_min",
-    "forecast_days" : 7
+    "latitude": 25.3969,
+    "longitude": 68.3772,
+    "daily": "temperature_2m_max,temperature_2m_min",
+    "forecast_days": 7,
 }
 
 response = requests.get(url, params=params)
@@ -20,9 +21,9 @@ min_temp = data["daily"]["temperature_2m_min"]
 max_temp = data["daily"]["temperature_2m_max"]
 
 datas = {
-    "Dates" : data["daily"]["time"],
-    "Min_Temp" : data["daily"]["temperature_2m_min"],
-    "Max_Temp" : data["daily"]["temperature_2m_max"]
+    "Dates": data["daily"]["time"],
+    "Min_Temp": data["daily"]["temperature_2m_min"],
+    "Max_Temp": data["daily"]["temperature_2m_max"],
 }
 
 df = pd.DataFrame(datas)

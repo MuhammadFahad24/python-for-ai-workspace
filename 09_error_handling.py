@@ -1,7 +1,7 @@
 try:
     age = int(input("Enter your Age: "))
     print(age)
-except:
+except ValueError:
     print("Invalid Input")
 else:
     print("Age Accepted")
